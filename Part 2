@@ -1,0 +1,55 @@
+<!--
+Name: Your Name
+File: image_gallery.html
+Date: March 2025
+A JavaScript-based image gallery that allows users to change images by clicking on thumbnails.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100px;
+            cursor: pointer;
+        }
+        #displayed-image {
+            width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <img id="displayed-image" src="image1.jpg" alt="Displayed Image">
+    <div class="gallery">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+    </div>
+
+    <script>
+        const displayedImage = document.getElementById('displayed-image');
+        const thumbnails = document.querySelectorAll('.gallery img');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                displayedImage.src = this.src;
+                displayedImage.alt = this.alt;
+            });
+        });
+    </script>
+</body>
+</html>
