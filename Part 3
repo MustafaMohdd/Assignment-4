@@ -1,0 +1,41 @@
+<!--
+Name: Your Name
+File: object_building_practice.html
+Date: March 2025
+A JavaScript practice file for creating and manipulating objects.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Building Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object Building Practice</h1>
+    <button id="showInfo">Show Person Info</button>
+    <p id="output"></p>
+
+    <script>
+        const person = {
+            name: "Alice",
+            age: 25,
+            job: "Developer",
+            describe() {
+                return `${this.name} is ${this.age} years old and works as a ${this.job}.`;
+            }
+        };
+
+        document.getElementById('showInfo').addEventListener('click', function() {
+            document.getElementById('output').textContent = person.describe();
+        });
+    </script>
+</body>
+</html>
