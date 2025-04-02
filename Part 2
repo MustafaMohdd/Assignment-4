@@ -33,11 +33,11 @@ A JavaScript-based image gallery that allows users to change images by clicking 
 </head>
 <body>
     <h1>Image Gallery</h1>
-    <img id="displayed-image" src="https://via.placeholder.com/300" alt="Displayed Image">
+    <img id="displayed-image" src="image1.jpg" alt="Displayed Image">
     <div class="gallery">
-        <img src="https://via.placeholder.com/100x100" alt="Image 1">
-        <img src="https://via.placeholder.com/100x100/ff0000" alt="Image 2">
-        <img src="https://via.placeholder.com/100x100/0000ff" alt="Image 3">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
     </div>
 
     <script>
