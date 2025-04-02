@@ -1,9 +1,8 @@
-part 1
 <!--
 Name: Mustafa Mohd
 File: silly_story_generator.html
 Date: April 2nd 2025
-A JavaScript-based story generator that creates a silly random story based on user input.
+A JavaScript-based story generator that creates a funny random story based on user input.
 -->
 
 <!DOCTYPE html>
@@ -14,38 +13,45 @@ A JavaScript-based story generator that creates a silly random story based on us
     <title>Silly Story Generator</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Verdana, sans-serif;
             text-align: center;
             padding: 20px;
         }
         button {
-            margin-top: 10px;
+            margin-top: 15px;
+            padding: 8px 12px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1>Silly Story Generator</h1>
     <label for="customName">Enter a name:</label>
-    <input type="text" id="customName" placeholder="Enter a name">
+    <input type="text" id="customName" placeholder="Type a name">
     <br>
-    <button id="generate">Generate Story</button>
+    <button id="generate">Create Story</button>
     <p id="story"></p>
 
     <script>
         document.getElementById('generate').addEventListener('click', generateStory);
 
         function generateStory() {
-            const nameInput = document.getElementById('customName').value;
+            const nameInput = document.getElementById('customName').value.trim();
             const story = document.getElementById('story');
             
-            let randomName = nameInput || 'Bob';
-            let randomPlace = ["the park", "the zoo", "a castle"][Math.floor(Math.random() * 3)];
-            let randomAction = ["danced joyfully", "sang loudly", "jumped in the air"][Math.floor(Math.random() * 3)];
-            let randomTemp = ["hot", "cold", "rainy"][Math.floor(Math.random() * 3)];
+            let userName = nameInput || 'Charlie';
+            let locations = ["a haunted house", "a carnival", "a spaceship"];
+            let actions = ["danced like a robot", "sang opera", "did a magic trick"];
+            let weather = ["stormy", "foggy", "windy"];
             
-            let storyText = `One day, ${randomName} went to ${randomPlace}. It was a ${randomTemp} day. ${randomName} ${randomAction} and made everyone laugh.`;
+            let randomPlace = locations[Math.floor(Math.random() * locations.length)];
+            let randomAction = actions[Math.floor(Math.random() * actions.length)];
+            let randomWeather = weather[Math.floor(Math.random() * weather.length)];
+            
+            let storyText = `Yesterday, ${userName} visited ${randomPlace}. The weather was ${randomWeather}. Suddenly, ${userName} ${randomAction}, leaving everyone amazed!`;
             
             story.textContent = storyText;
         }
     </script>
 </body>
+</html>
