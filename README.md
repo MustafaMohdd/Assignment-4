@@ -3,7 +3,7 @@ part 1
 <!--
 Name: Mustafa Mohd
 File: silly_story_generator.html
-Date: March 2025
+Date: April 2nd 2025
 A JavaScript-based story generator that creates a silly random story based on user input.
 -->
 
@@ -52,9 +52,9 @@ A JavaScript-based story generator that creates a silly random story based on us
 </body>
 </html>part 2
 <!--
-Name: Your Name
+Name: Mustafa Mohd
 File: image_gallery.html
-Date: March 2025
+Date: April 2nd 2025
 A JavaScript-based image gallery that allows users to change images by clicking on thumbnails.
 -->
 
@@ -108,9 +108,9 @@ A JavaScript-based image gallery that allows users to change images by clicking 
 </html>
 part 3
 <!--
-Name: Your Name
+Name: Mustafa Mohd
 File: object_building_practice.html
-Date: March 2025
+Date: April 2nd 2025
 A JavaScript practice file for creating and manipulating objects.
 -->
 
@@ -150,9 +150,9 @@ A JavaScript practice file for creating and manipulating objects.
 </html>
 part 4
 <!--
-Name: Your Name
+Name: Mustafa Mohd
 File: bouncing_balls.html
-Date: March 2025
+Date: April 2nd 2025
 A JavaScript-based animation that creates bouncing balls with dynamic movement.
 -->
 
