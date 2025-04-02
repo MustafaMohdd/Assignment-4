@@ -1,7 +1,7 @@
 # Assignment-4
 part 1
 <!--
-Name: Your Name
+Name: Mustafa Mohd
 File: silly_story_generator.html
 Date: March 2025
 A JavaScript-based story generator that creates a silly random story based on user input.
