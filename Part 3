@@ -25,8 +25,8 @@ A JavaScript practice file for creating and manipulating objects.
 
     <script>
         const person = {
-            name: "Alice",
-            age: 25,
+            name: "Jack",
+            age: 22,
             job: "Developer",
             describe() {
                 return `${this.name} is ${this.age} years old and works as a ${this.job}.`;
