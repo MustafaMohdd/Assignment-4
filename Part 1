@@ -39,3 +39,61 @@ A JavaScript-based story generator that creates a silly random story based on us
     <script src="main.js"></script> <!-- Link to external JavaScript -->
 </body>
 </html>
+
+// Selecting the elements from the DOM
+const customName = document.getElementById("customName");
+const randomize = document.getElementById("generate");
+const story = document.getElementById("story");
+
+// Arrays to hold random story elements
+const insertX = ['Tommy', 'Linda', 'Sam', 'Alex', 'Charlie'];
+const insertY = ['a dog', 'a cat', 'a monkey', 'a robot', 'an alien'];
+const insertZ = ['to the moon', 'to the beach', 'to the store', 'to the park', 'to the zoo'];
+
+// A function to return a random item from an array
+function randomValueFromArray(array) {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+}
+
+// The main story text template
+let storyText = "Once upon a time, :insertx: saw :inserty: and decided to take it :insertz:. It was a crazy adventure!";
+
+// Event listener for generating the story
+randomize.addEventListener("click", result);
+
+// Function to generate and display the silly story
+function result() {
+    let newStory = storyText;
+    const xItem = randomValueFromArray(insertX);
+    const yItem = randomValueFromArray(insertY);
+    const zItem = randomValueFromArray(insertZ);
+
+    // Replacing placeholders in the story
+    newStory = newStory.replace(":insertx:", xItem);
+    newStory = newStory.replace(":inserty:", yItem);
+    newStory = newStory.replace(":insertz:", zItem);
+
+    // If custom name is provided, replace 'Tommy' with custom name
+    if (customName.value) {
+        const name = customName.value;
+        newStory = newStory.replace(xItem, name); // Replace random name with custom name
+    }
+
+    // If UK is selected, convert US measurements (optional logic for weight/temperature conversion)
+    if (document.getElementById("uk").checked) {
+        let weight = "300 pounds"; // Default weight in pounds
+        let temperature = "94 fahrenheit"; // Default temperature in Fahrenheit
+
+        // Convert pounds to stones and fahrenheit to centigrade
+        const weightInStones = Math.round(300 / 14) + " stone";
+        const tempInCentigrade = Math.round((94 - 32) * 5 / 9) + " centigrade";
+
+        // Replace the default weight and temperature with UK units
+        newStory = newStory.replace(weight, weightInStones);
+        newStory = newStory.replace(temperature, tempInCentigrade);
+    }
+
+    // Display the generated story
+    story.textContent = newStory;
+}
