@@ -45,10 +45,10 @@ A JavaScript-based story generator that creates a silly random story based on us
             return array[Math.floor(Math.random() * array.length)];
         }
 
-        const storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
-        const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
-        const insertY = ["the soup kitchen", "Disneyland", "the White House"];
-        const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
+        const storyText = "It was 94 fahrenheit outside, and :insertx: was enjoying a quiet day at :inserty:. Suddenly, out of nowhere, a giant flying pizza appeared in the sky! Everyone gasped as it :insertz:. Bob, who happened to be there, couldn't believe it. 'That pizza must weigh at least 300 pounds!' they exclaimed.";
+        const insertX = ["Professor Noodle", "Captain Bananas", "The Great Mustachio"];
+        const insertY = ["Central Park", "a busy shopping mall", "a secret underground lab"];
+        const insertZ = ["started singing opera", "exploded into a shower of cheese", "landed gently and demanded a tip"];
         
         generateButton.addEventListener('click', () => {
             let newStory = storyText;
