@@ -24,20 +24,32 @@ A JavaScript-based image gallery that allows users to change images by clicking 
         .gallery img {
             width: 100px;
             cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
         }
         #displayed-image {
             width: 300px;
             margin-top: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
     <h1>Image Gallery</h1>
-    <img id="displayed-image" src="image1.jpg" alt="Displayed Image">
+
+    <!-- Main Displayed Image -->
+    <img id="displayed-image" src="images/image1.jpg" alt="Displayed Image">
+    
+    <!-- Thumbnail Images -->
     <div class="gallery">
-        <img src="image1.jpg" alt="Image 1">
-        <img src="image2.jpg" alt="Image 2">
-        <img src="image3.jpg" alt="Image 3">
+        <img src="images/image1.jpg" alt="Image 1">
+        <img src="images/image2.jpg" alt="Image 2">
+        <img src="images/image3.jpg" alt="Image 3">
     </div>
 
     <script>
@@ -50,6 +62,12 @@ A JavaScript-based image gallery that allows users to change images by clicking 
                 displayedImage.alt = this.alt;
             });
         });
+
+        // Error handling for broken image links
+        displayedImage.onerror = function() {
+            displayedImage.src = "images/placeholder.jpg"; // Default placeholder image
+            displayedImage.alt = "Image not found";
+        };
     </script>
 </body>
 </html>
