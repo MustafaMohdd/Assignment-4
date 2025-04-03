@@ -1,3 +1,45 @@
+<!--
+Name: Mustafa Mohd
+File: index.html
+Date: April 2nd 2025
+A JavaScript-based story generator that creates a silly random story based on user input.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silly Story Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Silly Story Generator</h1>
+    
+    <label for="customName">Enter a name:</label>
+    <input type="text" id="customName" placeholder="Enter a name">
+    
+    <p>
+        <label><input type="radio" name="unit" id="us" checked> US</label>
+        <label><input type="radio" name="unit" id="uk"> UK</label>
+    </p>
+    
+    <button id="generate">Generate Story</button>
+    <p id="story"></p>
+
+    <script src="main.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
+
 const customName = document.getElementById("customName");
 const randomize = document.getElementById("generate");
 const story = document.getElementById("story");
