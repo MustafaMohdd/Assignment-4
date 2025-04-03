@@ -38,3 +38,48 @@ function result() {
 
     story.textContent = newStory;
 }
+const customName = document.getElementById("customName");
+const randomize = document.getElementById("generate");
+const story = document.getElementById("story");
+
+function randomValueFromArray(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+const storyText =
+    "It was a crazy day. :insertx: went to :inserty: and saw :insertz:. It was 94 Fahrenheit outside, and 300 pounds of food was everywhere!";
+
+const insertX = ["Alice", "John", "Emma", "Mustafa", "Charlie"];
+const insertY = ["the zoo", "a castle", "the mall", "the jungle", "a spaceship"];
+const insertZ = ["a flying car", "a talking cat", "a giant dancing banana", "a robot dog", "a unicorn eating pizza"];
+
+randomize.addEventListener("click", result);
+
+function result() {
+    let newStory = storyText;
+
+    let xItem = randomValueFromArray(insertX);
+    let yItem = randomValueFromArray(insertY);
+    let zItem = randomValueFromArray(insertZ);
+
+    // Replace all placeholders correctly
+    newStory = newStory.replace(":insertx:", xItem);
+    newStory = newStory.replace(":inserty:", yItem);
+    newStory = newStory.replace(":insertz:", zItem);
+
+    // Replace custom name if entered
+    if (customName.value !== "") {
+        newStory = newStory.replace(xItem, customName.value);
+    }
+
+    // Convert to UK units if checked
+    if (document.getElementById("uk").checked) {
+        let weight = Math.round(300 / 14) + " stone";
+        let temperature = Math.round((94 - 32) * 5 / 9) + " centigrade";
+        newStory = newStory.replace("94 Fahrenheit", temperature);
+        newStory = newStory.replace("300 pounds", weight);
+    }
+
+    // Display the new story
+    story.textContent = newStory;
+}
